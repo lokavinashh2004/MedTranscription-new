@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medical Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Add New Medical Code</h1>
+            <div>
+                <a href="/codes" class="btn btn-outline-primary">Back to Codes</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" action="/add_code">
+                    <div class="mb-3">
+                        <label for="term" class="form-label">Term</label>
+                        <input type="text" class="form-control" id="term" name="term" required>
+                        <div class="form-text">The primary medical term (e.g., "complete blood count")</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description" required>
+                        <div class="form-text">Formal description of the medical term</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="code" class="form-label">Code</label>
+                        <input type="text" class="form-control" id="code" name="code" required>
+                        <div class="form-text">The standardized code (e.g., "LAB023")</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type</label>
+                        <select class="form-select" id="type" name="type" required>
+                            <option value="lab_test">Lab Test</option>
+                            <option value="diagnosis">Diagnosis</option>
+                            <option value="procedure">Procedure</option>
+                            <option value="medication">Medication</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="form-text">Category of the medical term</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="alternate_terms" class="form-label">Alternate Terms</label>
+                        <input type="text" class="form-control" id="alternate_terms" name="alternate_terms">
+                        <div class="form-text">Comma-separated list of alternative terms (e.g., "CBC, blood panel")</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Add Medical Code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

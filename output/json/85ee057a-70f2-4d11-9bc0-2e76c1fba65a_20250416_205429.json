@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "generated_at": "2025-04-16T20:54:29.089772",
+    "source_audio": "85ee057a-70f2-4d11-9bc0-2e76c1fba65a",
+    "total_matches": 14
+  },
+  "results": [
+    {
+      "phrase": "type 2 diabetes",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.048073"
+    },
+    {
+      "phrase": "chest pain",
+      "category": "symptom",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.048073"
+    },
+    {
+      "phrase": "shortness of breath",
+      "category": "symptom",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "ECG",
+      "category": "procedure",
+      "confidence": 0.95,
+      "matched_term": "ecg",
+      "code": "1234",
+      "description": "ecg",
+      "type": "lab_test",
+      "match_score": 100,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "st-segment elevation",
+      "category": "finding",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "Tropanin levels",
+      "category": "test",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "elevated Tropanin",
+      "category": "finding",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "acute myocardial infarction",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "PCI",
+      "category": "procedure",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "percutaneous coronary intervention",
+      "category": "procedure",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "aspirin",
+      "category": "medication",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "clopidogrel",
+      "category": "medication",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "atorvastatin",
+      "category": "medication",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    },
+    {
+      "phrase": "cardiac rehabilitation",
+      "category": "treatment",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The 62-year-old female with a history of type 2 diabetes presented with chest pain and shortness of breath. Ardiaca valuation including an ECG showed a st-segment elevation. Tropanin levels were elevated at 5.2 NG-slash NL. The cardiologist diagnosed and acute mycardial infarction and performed emergency PCI percutaneous coronary intervention. The patient was started on aspirin, clopidoprol, an adorvastatin, and was advised cardiac rehabilitation.",
+      "timestamp": "2025-04-16T20:54:29.053483"
+    }
+  ]
+}

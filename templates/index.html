@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Transcription </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .container { max-width: 800px; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .upload-area { background-color: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px; }
+        .results { display: none; background-color: #e9f7ef; padding: 20px; border-radius: 10px; }
+        pre.json-display { 
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            border-radius: 5px; 
+            max-height: 400px; 
+            overflow-y: auto; 
+            font-size: 14px;
+        }
+        .nav-tabs { margin-bottom: 20px; }
+        .tab-pane { padding: 20px 0; }
+        .record-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #dc3545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            border: none;
+        }
+        .record-btn:hover {
+            background-color: #c82333;
+        }
+        .record-btn.recording {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .record-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .record-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .timer {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .upload-tabs {
+            margin-bottom: 20px;
+        }
+        .audio-preview {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .recording-info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .record-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="header">
+            <h1>Medical Transcription & Coding</h1>
+            <p class="text-muted">Upload or record audio for transcription and medical code extraction</p>
+            
+            <nav>
+                <a href="/" class="btn btn-sm btn-outline-primary me-2">Home</a>
+                <a href="/codes" class="btn btn-sm btn-outline-secondary">View Medical Codes</a>
+            </nav>
+        </div>
+        
+        <ul class="nav nav-tabs upload-tabs" id="uploadTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="file-tab" data-bs-toggle="tab" data-bs-target="#file-upload" type="button" role="tab">Upload File</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="record-tab" data-bs-toggle="tab" data-bs-target="#record-audio" type="button" role="tab">Record Audio</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="uploadTabsContent">
+            <!-- File Upload Tab -->
+            <div class="tab-pane fade show active" id="file-upload" role="tabpanel">
+                <div class="upload-area">
+                    <h3>Upload Audio</h3>
+                    <p>Select an audio file (.wav, .mp3, .m4a) to transcribe and analyze.</p>
+                    
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input class="form-control" type="file" id="file" name="file" accept=".wav,.mp3,.m4a">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="upload-btn">
+                            <span id="upload-text">Upload & Process</span>
+                            <span id="loading-spinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Record Audio Tab -->
+            <div class="tab-pane fade" id="record-audio" role="tabpanel">
+                <div class="upload-area">
+                    <h3>Record Audio</h3>
+                    <p>Record your medical notes directly in the browser.</p>
+                    
+                    <div class="record-controls">
+                        <div class="timer" id="timer">00:00</div>
+                        <button id="record-btn" class="record-btn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <div class="recording-info" id="recording-info">Press to start recording</div>
+                        
+                        <div class="audio-preview d-none" id="audio-preview-container">
+                            <h5>Recording Preview</h5>
+                            <audio id="audio-preview" controls class="audio-preview"></audio>
+                            
+                            <div class="record-actions">
+                                <button id="discard-btn" class="btn btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i> Discard
+                                </button>
+                                <button id="process-recording-btn" class="btn btn-success">
+                                    <i class="fas fa-check"></i> Process Recording
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results" id="results">
+            <h3>Processing Results</h3>
+            <div class="alert alert-success" role="alert">
+                File processed successfully!
+            </div>
+            
+            <div class="mb-3">
+                <h5>Download Reports:</h5>
+                <a href="#" id="excel-link" class="btn btn-success me-2">Excel Report</a>
+                <a href="#" id="json-link" class="btn btn-info">JSON Data</a>
+            </div>
+            
+            <div class="mt-4">
+                <ul class="nav nav-tabs" id="resultTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">Summary</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="json-tab" data-bs-toggle="tab" data-bs-target="#json" type="button" role="tab">JSON Data</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="transcription-tab" data-bs-toggle="tab" data-bs-target="#transcription" type="button" role="tab">Transcription</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="resultTabsContent">
+                    <div class="tab-pane fade show active" id="summary" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Detected Medical Terms</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-striped" id="summary-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Medical Phrase</th>
+                                                <th>Category</th>
+                                                <th>Matched Code</th>
+                                                <th>Match Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="summary-body">
+                                            <!-- Will be filled dynamically -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="json" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">JSON Data</h5>
+                                <pre class="json-display" id="json-content">
+                                    <!-- Will be filled dynamically -->
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="transcription" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Audio Transcription</h5>
+                                <p id="transcription-content">
+                                    <!-- Will be filled dynamically -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="alert alert-danger d-none" id="error-alert" role="alert"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables for recording
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingStartTime;
+        let timerInterval;
+        let audioBlob;
+        
+        // DOM Elements
+        const recordBtn = document.getElementById('record-btn');
+        const timer = document.getElementById('timer');
+        const recordingInfo = document.getElementById('recording-info');
+        const audioPreviewContainer = document.getElementById('audio-preview-container');
+        const audioPreview = document.getElementById('audio-preview');
+        const discardBtn = document.getElementById('discard-btn');
+        const processRecordingBtn = document.getElementById('process-recording-btn');
+        
+        // Check if browser supports MediaRecorder
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            recordBtn.addEventListener('click', toggleRecording);
+            discardBtn.addEventListener('click', discardRecording);
+            processRecordingBtn.addEventListener('click', processRecording);
+        } else {
+            recordBtn.disabled = true;
+            recordingInfo.textContent = 'Recording is not supported in your browser.';
+        }
+        
+        // Toggle recording state
+        function toggleRecording() {
+            if (!mediaRecorder || mediaRecorder.state === 'inactive') {
+                startRecording();
+            } else {
+                stopRecording();
+            }
+        }
+        
+        // Start recording
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    // Reset
+                    audioChunks = [];
+                    audioPreviewContainer.classList.add('d-none');
+                    
+                    // Setup recorder
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = (e) => {
+                        if (e.data.size > 0) audioChunks.push(e.data);
+                    };
+                    
+                    mediaRecorder.onstop = () => {
+                        // Combine audio chunks and create URL
+                        audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        
+                        // Set up audio preview
+                        audioPreview.src = audioUrl;
+                        audioPreviewContainer.classList.remove('d-none');
+                        
+                        // Reset UI
+                        recordBtn.classList.remove('recording');
+                        recordingInfo.textContent = 'Recording complete. Listen to preview below.';
+                    };
+                    
+                    // Start recording
+                    mediaRecorder.start();
+                    recordBtn.classList.add('recording');
+                    recordingInfo.textContent = 'Recording... Click to stop.';
+                    
+                    // Start timer
+                    recordingStartTime = Date.now();
+                    startTimer();
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone:', error);
+                    recordingInfo.textContent = 'Error accessing microphone. Please check permissions.';
+                });
+        }
+        
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                
+                // Stop all tracks of the stream
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                
+                // Stop timer
+                clearInterval(timerInterval);
+            }
+        }
+        
+        // Discard current recording
+        function discardRecording() {
+            audioBlob = null;
+            audioPreview.src = '';
+            audioPreviewContainer.classList.add('d-none');
+            recordingInfo.textContent = 'Press to start recording';
+            timer.textContent = '00:00';
+        }
+        
+        // Process the recording
+        function processRecording() {
+            if (!audioBlob) {
+                showError('No recording to process');
+                return;
+            }
+            
+            // Create FormData and append the audio blob
+            const formData = new FormData();
+            formData.append('file', audioBlob, 'recording.wav');
+            
+            // Show loading state
+            processRecordingBtn.disabled = true;
+            processRecordingBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Processing...';
+            document.getElementById('error-alert').classList.add('d-none');
+            document.getElementById('results').style.display = 'none';
+            
+            // Send to server
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(handleProcessingResponse)
+            .catch(error => {
+                showError('An error occurred during processing');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Reset loading state
+                processRecordingBtn.disabled = false;
+                processRecordingBtn.innerHTML = '<i class="fas fa-check"></i> Process Recording';
+            });
+        }
+        
+        // Start timer for recording duration
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                const elapsedTime = Date.now() - recordingStartTime;
+                const seconds = Math.floor((elapsedTime / 1000) % 60).toString().padStart(2, '0');
+                const minutes = Math.floor((elapsedTime / 1000 / 60) % 60).toString().padStart(2, '0');
+                timer.textContent = `${minutes}:${seconds}`;
+                
+                // Auto-stop after 5 minutes
+                if (elapsedTime > 5 * 60 * 1000) {
+                    stopRecording();
+                }
+            }, 1000);
+        }
+        
+        // File upload form
+        document.getElementById('upload-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('file');
+            if (!fileInput.files[0]) {
+                showError('Please select a file to upload');
+                return;
+            }
+            
+            // Show loading state
+            document.getElementById('upload-btn').disabled = true;
+            document.getElementById('upload-text').classList.add('d-none');
+            document.getElementById('loading-spinner').classList.remove('d-none');
+            document.getElementById('error-alert').classList.add('d-none');
+            document.getElementById('results').style.display = 'none';
+            
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(handleProcessingResponse)
+            .catch(error => {
+                showError('An error occurred during processing');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Reset loading state
+                document.getElementById('upload-btn').disabled = false;
+                document.getElementById('upload-text').classList.remove('d-none');
+                document.getElementById('loading-spinner').classList.add('d-none');
+            });
+        });
+        
+        // Handle the processing response
+        function handleProcessingResponse(data) {
+            if (data.error) {
+                showError(data.error);
+            } else {
+                // Show results
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('excel-link').href = `/download/excel/${data.excel_file}`;
+                document.getElementById('json-link').href = `/download/json/${data.json_file}`;
+                
+                // Display JSON data
+                document.getElementById('json-content').textContent = JSON.stringify(data.results, null, 2);
+                
+                // Display the transcription
+                if (data.results && data.results.results && data.results.results.length > 0) {
+                    document.getElementById('transcription-content').textContent = data.results.results[0].source_text;
+                }
+                
+                // Populate summary table
+                const summaryBody = document.getElementById('summary-body');
+                summaryBody.innerHTML = '';
+                
+                if (data.results && data.results.results) {
+                    data.results.results.forEach(result => {
+                        const row = document.createElement('tr');
+                        
+                        const phraseCell = document.createElement('td');
+                        phraseCell.textContent = result.phrase;
+                        row.appendChild(phraseCell);
+                        
+                        const categoryCell = document.createElement('td');
+                        categoryCell.textContent = result.category;
+                        row.appendChild(categoryCell);
+                        
+                        const codeCell = document.createElement('td');
+                        if (result.code) {
+                            const codeElement = document.createElement('code');
+                            codeElement.textContent = result.code;
+                            codeCell.appendChild(codeElement);
+                            
+                            if (result.description) {
+                                const descElement = document.createElement('small');
+                                descElement.className = 'd-block text-muted';
+                                descElement.textContent = result.description;
+                                codeCell.appendChild(descElement);
+                            }
+                        } else {
+                            codeCell.textContent = 'No match';
+                        }
+                        row.appendChild(codeCell);
+                        
+                        const scoreCell = document.createElement('td');
+                        if (result.match_score) {
+                            const scoreValue = parseInt(result.match_score);
+                            let badgeClass = 'bg-danger';
+                            if (scoreValue > 90) badgeClass = 'bg-success';
+                            else if (scoreValue > 75) badgeClass = 'bg-warning';
+                            
+                            const badge = document.createElement('span');
+                            badge.className = `badge ${badgeClass}`;
+                            badge.textContent = `${scoreValue}%`;
+                            scoreCell.appendChild(badge);
+                        } else {
+                            scoreCell.textContent = 'N/A';
+                        }
+                        row.appendChild(scoreCell);
+                        
+                        summaryBody.appendChild(row);
+                    });
+                }
+                
+                // Scroll to results
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        function showError(message) {
+            const errorAlert = document.getElementById('error-alert');
+            errorAlert.textContent = message;
+            errorAlert.classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>

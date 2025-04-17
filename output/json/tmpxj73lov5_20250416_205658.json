@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "generated_at": "2025-04-16T20:56:58.593775",
+    "source_audio": "tmpxj73lov5",
+    "total_matches": 15
+  },
+  "results": [
+    {
+      "phrase": "elevated cholesterol",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "mild liver enzyme irregularities",
+      "category": "diagnosis",
+      "confidence": 0.9,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "arrhythmia",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "ECG",
+      "category": "procedure",
+      "confidence": 1.0,
+      "matched_term": "ecg",
+      "code": "1234",
+      "description": "ecg",
+      "type": "lab_test",
+      "match_score": 100,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "pre-diabetic",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "lifestyle changes",
+      "category": "treatment",
+      "confidence": 0.85,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "infections",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "abnormalities",
+      "category": "diagnosis",
+      "confidence": 0.9,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "complete blood count",
+      "category": "procedure",
+      "confidence": 1.0,
+      "matched_term": "complete blood count",
+      "code": "LAB023",
+      "description": "Complete Blood Count",
+      "type": "lab_test",
+      "match_score": 100,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "regular checkups",
+      "category": "treatment",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "dietary modifications",
+      "category": "treatment",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "increased physical activity",
+      "category": "treatment",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "blood pressure",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "blood sugar levels",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    },
+    {
+      "phrase": "vital signs",
+      "category": "diagnosis",
+      "confidence": 0.95,
+      "matched_term": null,
+      "code": null,
+      "description": null,
+      "type": null,
+      "match_score": 0,
+      "source_text": " The Medical Report of Mr. Rajesh Sharma provides a detailed summary of his current health status based on recent laboratory tests and clinical evaluations. The report indicates stable vital signs and normal blood pressure levels, but highlights elevated cholesterol and mild liver enzyme irregularities. His ECG results suggest slight arrhythmia, requiring further monitoring. Blood sugar levels are within the pre-diabetic range, and a recommendation for lifestyle changes has been made. No signs of major infections or abnormalities were found in the complete blood count. The overall health condition is manageable with regular checkups, dietary modifications, and increased physical activity.",
+      "timestamp": "2025-04-16T20:56:58.554144"
+    }
+  ]
+}
