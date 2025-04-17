@@ -1,10 +1,9 @@
-Flask==2.3.3
-pandas==2.2.2
-openpyxl==3.1.2
-openai-whisper
-google-generativeai==0.3.2
+Flask==2.2.3
+pandas==1.5.3
 fuzzywuzzy==0.18.0
-python-Levenshtein==0.23.0
-werkzeug==3.0.1
-uvicorn==0.15.0
+python-Levenshtein==0.20.9
+whisper==1.0.0
+google-generativeai==0.3.1
 gunicorn==20.1.0
+werkzeug==2.2.3
+openpyxl==3.1.2
